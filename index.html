@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beat Lab - sequenciador de batidas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="stage">
+  <div class="device">
+    <i class="screw tl"></i><i class="screw tr"></i><i class="screw bl"></i><i class="screw br"></i>
+
+    <header class="top">
+      <div class="brand">
+        <h1>Beat Lab</h1>
+        <p>Sequenciador de 16 passos</p>
+      </div>
+
+      <div class="panel">
+        <div class="lcd">
+          <span class="lcd-label">BPM</span>
+          <output id="bpmOut" for="bpm">110</output>
+        </div>
+        <div class="bpm-ctl">
+          <label for="bpm">Andamento</label>
+          <input type="range" id="bpm" min="60" max="200" value="110">
+        </div>
+        <button type="button" class="play" id="playBtn" aria-pressed="false">
+          <span class="play-icon" aria-hidden="true"></span>
+          <span id="playText">Tocar</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="seq" aria-label="Sequenciador">
+      <div class="leds-row" aria-hidden="true">
+        <span></span>
+        <div class="leds" id="leds"></div>
+      </div>
+      <div id="tracks"></div>
+      <p class="warn" id="warn" role="alert" hidden>Seu navegador não suporta áudio por aqui. Tente o Chrome, o Firefox ou o Edge atualizados.</p>
+    </section>
+
+    <footer class="bottom">
+      <div class="actions">
+        <button type="button" class="tool" id="clearBtn">Limpar</button>
+        <button type="button" class="tool" id="resetBtn">Padrão inicial</button>
+      </div>
+      <p>Toque no nome de um instrumento pra ouvir. A barra de espaço toca e para.</p>
+    </footer>
+  </div>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
